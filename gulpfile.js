@@ -54,7 +54,6 @@ gulp.task('webserver', function() {
 gulp.task("default", gulp.series("sass", "webserver", "watch"))
 
 
-
 gulp.task("bCss", function() {
     return gulp.src("./src/css/*.css")
         .pipe(gulp.dest("./dist/css"))
@@ -70,4 +69,4 @@ gulp.task("bJs", function() {
 })
 
 
-gulp.task("bulid", gulp.series("sass", "bJs"))
+gulp.task("bulid", gulp.series("bCss", "bJs"))
