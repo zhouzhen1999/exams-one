@@ -32,9 +32,10 @@ gulp.task("watch", function() {
 })
 
 //起服务
-gulp.task('webserver', function() {
+gulp.task('web', function() {
     gulp.src('src')
         .pipe(server({
+            port: 6767,
             livereload: true,
             directoryListing: true,
             middleware: function(req, res, next) {
@@ -51,7 +52,7 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task("default", gulp.series("sass", "webserver", "watch"))
+gulp.task("default", gulp.series("sass", "web", "watch"))
 
 
 gulp.task("bCss", function() {
